@@ -1,7 +1,0 @@
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RemoteData.Contract\bin\Debug\RemoteData.Contract.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RemoteData.Contract\bin\Debug\RemoteData.Contract.pdb
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RemoteData.Contract\bin\Debug\RL.Entity.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RemoteData.Contract\bin\Debug\RL.Entity.pdb
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RemoteData.Contract\obj\Debug\RL.RemoteData.Contract.csprojResolveAssemblyReference.cache
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RemoteData.Contract\obj\Debug\RemoteData.Contract.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RemoteData.Contract\obj\Debug\RemoteData.Contract.pdb

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,14 +45,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OwnData.Contract\RL.OwnData.Contract.csproj">
-      <Project>{314d98a9-2a17-4128-92c7-9ad18b2c315e}</Project>
-      <Name>RL.OwnData.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RemoteData.Contract\RL.RemoteData.Contract.csproj">
-      <Project>{289124bf-5077-4c1d-8c34-f8e0314af1f3}</Project>
-      <Name>RL.RemoteData.Contract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RL.DataProcessing.Contract\RL.DataProcessing.Contract.csproj">
       <Project>{e8dd7aba-d194-452d-ab02-a92b11b3654d}</Project>
       <Name>RL.DataProcessing.Contract</Name>
@@ -58,6 +53,17 @@
       <Project>{9cfe0e86-fdb6-4a3c-9d42-87e5927078e2}</Project>
       <Name>RL.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RL.OwnData.Contract\RL.OwnData.Contract.csproj">
+      <Project>{a2bbca6f-3513-495d-9f7e-a5048cd074d9}</Project>
+      <Name>RL.OwnData.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.RemoteData.Contract\RL.RemoteData.Contract.csproj">
+      <Project>{9bbd3a3e-6bb3-4b5a-943d-a1667a59d664}</Project>
+      <Name>RL.RemoteData.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -42,18 +42,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OwnData.Contract\RL.OwnData.Contract.csproj">
-      <Project>{314d98a9-2a17-4128-92c7-9ad18b2c315e}</Project>
-      <Name>RL.OwnData.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OwnData.Implementation\RL.OwnData.Implementation.csproj">
-      <Project>{00ec5a76-0f9b-449a-b9e4-fc28d4221eeb}</Project>
-      <Name>RL.OwnData.Implementation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RemoteData.Contract\RL.RemoteData.Contract.csproj">
-      <Project>{289124bf-5077-4c1d-8c34-f8e0314af1f3}</Project>
-      <Name>RL.RemoteData.Contract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RL.DataProcessing.Contract\RL.DataProcessing.Contract.csproj">
       <Project>{e8dd7aba-d194-452d-ab02-a92b11b3654d}</Project>
       <Name>RL.DataProcessing.Contract</Name>
@@ -62,8 +50,20 @@
       <Project>{0db51a0f-43bc-448b-9f7c-dd22e3984585}</Project>
       <Name>RL.DataProcessing.Implementation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RL.OwnData.Contract\RL.OwnData.Contract.csproj">
+      <Project>{a2bbca6f-3513-495d-9f7e-a5048cd074d9}</Project>
+      <Name>RL.OwnData.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.OwnData.Implementation\RL.OwnData.Implementation.csproj">
+      <Project>{b7c24984-b233-4341-8056-542361758bed}</Project>
+      <Name>RL.OwnData.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.RemoteData.Contract\RL.RemoteData.Contract.csproj">
+      <Project>{9bbd3a3e-6bb3-4b5a-943d-a1667a59d664}</Project>
+      <Name>RL.RemoteData.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RL.RemoteData.Implementation\RL.RemoteData.Implementation.csproj">
-      <Project>{9895e3c0-ed81-4369-8838-ad90e19d6aae}</Project>
+      <Project>{82d6f7cc-9008-47b3-bf2a-c338ca770910}</Project>
       <Name>RL.RemoteData.Implementation</Name>
     </ProjectReference>
   </ItemGroup>

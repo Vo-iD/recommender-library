@@ -3,9 +3,5 @@ C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\Recom
 C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\obj\Debug\RL.DataProcessing.Contract.csprojResolveAssemblyReference.cache
 C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\obj\Debug\RL.DataProcessing.Contract.dll
 C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\obj\Debug\RL.DataProcessing.Contract.pdb
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\bin\Debug\OwnData.Contract.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\bin\Debug\RemoteData.Contract.dll
 C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\bin\Debug\RL.Entity.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\bin\Debug\OwnData.Contract.pdb
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\bin\Debug\RemoteData.Contract.pdb
 C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.DataProcessing.Contract\bin\Debug\RL.Entity.pdb

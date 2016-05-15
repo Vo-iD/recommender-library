@@ -68,3 +68,5 @@ C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\Recom
 C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Web\obj\Debug\RL.Web.csprojResolveAssemblyReference.cache
 C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Web\obj\Debug\RL.Web.dll
 C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Web\obj\Debug\RL.Web.pdb
+C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Web\bin\AutoMapper.dll
+C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Web\bin\AutoMapper.xml
