@@ -39,10 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Own\Following.cs" />
+    <Compile Include="Own\Mark.cs" />
+    <Compile Include="Own\Message.cs" />
+    <Compile Include="Own\OwnEntityAggregation.cs" />
+    <Compile Include="Own\Questionnaire.cs" />
+    <Compile Include="Own\QuestionnaireAnswer.cs" />
+    <Compile Include="Own\QuestionnaireHistory.cs" />
+    <Compile Include="Own\QuestionnaireItem.cs" />
+    <Compile Include="Own\SafeRemoveAggregation.cs" />
+    <Compile Include="Own\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Own\" />
     <Folder Include="Remote\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
