@@ -1,7 +1,0 @@
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Business.Contract\bin\Debug\RL.Business.Contract.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Business.Contract\bin\Debug\RL.Business.Contract.pdb
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Business.Contract\bin\Debug\RL.DataProcessing.Contract.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Business.Contract\bin\Debug\RL.DataProcessing.Contract.pdb
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Business.Contract\obj\Debug\RL.Business.Contract.csprojResolveAssemblyReference.cache
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Business.Contract\obj\Debug\RL.Business.Contract.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Business.Contract\obj\Debug\RL.Business.Contract.pdb

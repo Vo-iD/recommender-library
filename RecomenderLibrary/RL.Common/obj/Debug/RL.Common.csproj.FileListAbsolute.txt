@@ -1,5 +1,0 @@
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Common\bin\Debug\RL.Common.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Common\bin\Debug\RL.Common.pdb
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Common\obj\Debug\RL.Common.csprojResolveAssemblyReference.cache
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Common\obj\Debug\RL.Common.dll
-C:\Users\Bohdan\Google Диск\Study\4-th course\Course.Diploma Work\work\RecomenderLibrary\RL.Common\obj\Debug\RL.Common.pdb
