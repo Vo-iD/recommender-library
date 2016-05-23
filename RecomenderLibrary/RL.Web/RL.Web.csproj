@@ -63,6 +63,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -177,6 +179,9 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Configuration\NinjectResolver.cs" />
+    <Compile Include="Configuration\NinjectScope.cs" />
+    <Compile Include="Configuration\ServiceContainer.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -265,6 +270,18 @@
     <ProjectReference Include="..\RL.Configuration\RL.DataConfiguration.csproj">
       <Project>{5eaf46a4-e814-40b9-bbd3-be28f5eb0134}</Project>
       <Name>RL.DataConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.Entity\RL.Entity.csproj">
+      <Project>{9CFE0E86-FDB6-4A3C-9D42-87E5927078E2}</Project>
+      <Name>RL.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.OwnData.Contract\RL.OwnData.Contract.csproj">
+      <Project>{A2BBCA6F-3513-495D-9F7E-A5048CD074D9}</Project>
+      <Name>RL.OwnData.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.OwnData.Implementation\RL.OwnData.Implementation.csproj">
+      <Project>{B7C24984-B233-4341-8056-542361758BED}</Project>
+      <Name>RL.OwnData.Implementation</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,42 +1,33 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(RL.Web.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(RL.Web.App_Start.NinjectWebCommon), "Stop")]
+using System;
+using System.Web;
+using System.Web.Mvc;
+using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+using Ninject;
+using Ninject.Web.Common;
+using RL.Web;
+using RL.Web.Configuration;
 
-namespace RL.Web.App_Start
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
+
+namespace RL.Web
 {
-    using System;
-    using System.Web;
-
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject;
-    using Ninject.Web.Common;
-
-    public static class NinjectWebCommon 
+    public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
-        /// <summary>
-        /// Starts the application
-        /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
-        /// <summary>
-        /// Stops the application.
-        /// </summary>
+
         public static void Stop()
         {
             bootstrapper.ShutDown();
         }
-        
-        /// <summary>
-        /// Creates the kernel that will manage your application.
-        /// </summary>
-        /// <returns>The created kernel.</returns>
+
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
@@ -55,12 +46,9 @@ namespace RL.Web.App_Start
             }
         }
 
-        /// <summary>
-        /// Load your modules or register your services here!
-        /// </summary>
-        /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        }        
+            DependencyResolver.SetResolver(new NinjectResolver(kernel));
+        }
     }
 }
