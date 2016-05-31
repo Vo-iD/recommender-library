@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RL.Web", "RL.Web\RL.Web.csproj", "{050FCC4C-84F5-4653-B624-93C19945BA99}"
 EndProject
@@ -26,6 +26,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RL.RemoteData.Contract", "RL.RemoteData.Contract\RL.RemoteData.Contract.csproj", "{9BBD3A3E-6BB3-4B5A-943D-A1667A59D664}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RL.RemoteData.Implementation", "RL.RemoteData.Implementation\RL.RemoteData.Implementation.csproj", "{82D6F7CC-9008-47B3-BF2A-C338CA770910}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{33A51FA4-BA68-4F47-84F8-F7A5218E725B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

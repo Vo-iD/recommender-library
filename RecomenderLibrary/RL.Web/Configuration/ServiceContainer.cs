@@ -9,7 +9,7 @@ namespace RL.Web.Configuration
         public static void RegisterServices(IKernel kernel)
         {
             // Repositories
-            kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            kernel.Bind<IDatabaseUnitOfWork>().To<DatabaseUnitOfWork>();
         }
     }
 }

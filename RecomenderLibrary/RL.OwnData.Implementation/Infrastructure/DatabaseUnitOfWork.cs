@@ -5,19 +5,19 @@ using RL.OwnData.Contract.Infrastructure;
 
 namespace RL.OwnData.Implementation.Infrastructure
 {
-    public class UnitOfWork : IUnitOfWork
+    public class DatabaseUnitOfWork : IDatabaseUnitOfWork
     {
         private readonly BookContext _context;
         private bool _disposed;
         private Dictionary<string, object> _safeRemoveRepositories;
         private Dictionary<string, object> _hardRemoveRepositories;
 
-        public UnitOfWork(BookContext context)
+        public DatabaseUnitOfWork(BookContext context)
         {
             _context = context;
         }
 
-        public UnitOfWork()
+        public DatabaseUnitOfWork()
         {
             _context = new BookContext();
         }

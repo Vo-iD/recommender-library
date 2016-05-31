@@ -5,17 +5,16 @@ using System.Web;
 using System.Web.Mvc;
 using RL.Entity.Own;
 using RL.OwnData.Contract.Infrastructure;
+using RL.RemoteData.Implementation;
 
 namespace RL.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IUnitOfWork unitOfWork)
+        public HomeController()
         {
-            var safeRepo = unitOfWork.SafeRemoveRepository<User>();
-            var hardRepo = unitOfWork.HardRemoveRepository<User>();
-
-            safeRepo.Insert(new User());
+            var ss = new TestBooks();
+            ss.Test();
         }
 
         public ActionResult Index()

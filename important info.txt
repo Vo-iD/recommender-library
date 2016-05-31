@@ -1,0 +1,9 @@
+log: RecommenderLibrary@gmail.com
+pass: Recommender256
+
+
+Key: AIzaSyAxrbWN4jv4QkxPg2qjz99H5oYPPCgU_Pk
+
+
+id: 1051731518079-rebj5bplf6oeu6fmdrfrov6pec0uvogi.apps.googleusercontent.com
+secret: KX-L5zNr3uxCG7njOQtIzFMj

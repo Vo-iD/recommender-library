@@ -2,7 +2,7 @@
 
 namespace RL.OwnData.Contract.Infrastructure
 {
-    public interface IUnitOfWork
+    public interface IDatabaseUnitOfWork
     {
         void Save();
 
