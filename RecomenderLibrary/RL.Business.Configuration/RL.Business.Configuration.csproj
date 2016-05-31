@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0DB51A0F-43BC-448B-9F7C-DD22E3984585}</ProjectGuid>
+    <ProjectGuid>{B5651A00-4850-492B-B674-619B9D6DA5D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RL.DataProcessing.Implementation</RootNamespace>
-    <AssemblyName>RL.DataProcessing.Implementation</AssemblyName>
+    <RootNamespace>RL.Business.Configuration</RootNamespace>
+    <AssemblyName>RL.Business.Configuration</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -32,19 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper">
-      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
-      <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -54,31 +43,35 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="DependencyInjection\BusinessConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RL.Business.Contract\RL.Business.Contract.csproj">
+      <Project>{a290658f-1517-470e-ba05-d27d79c64946}</Project>
+      <Name>RL.Business.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.Business.Iimplementation\RL.Business.Iimplementation.csproj">
+      <Project>{83ef0590-147e-46c3-a84c-0d61e66ba270}</Project>
+      <Name>RL.Business.Iimplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.Common\RL.Common.csproj">
+      <Project>{6863d01d-b6fa-400f-894a-baf437940fd8}</Project>
+      <Name>RL.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RL.DataProcessing.Contract\RL.DataProcessing.Contract.csproj">
-      <Project>{e8dd7aba-d194-452d-ab02-a92b11b3654d}</Project>
+      <Project>{E8DD7ABA-D194-452D-AB02-A92B11B3654D}</Project>
       <Name>RL.DataProcessing.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.DataProcessing.Implementation\RL.DataProcessing.Implementation.csproj">
+      <Project>{0DB51A0F-43BC-448B-9F7C-DD22E3984585}</Project>
+      <Name>RL.DataProcessing.Implementation</Name>
     </ProjectReference>
     <ProjectReference Include="..\RL.Entity\RL.Entity.csproj">
       <Project>{9cfe0e86-fdb6-4a3c-9d42-87e5927078e2}</Project>
       <Name>RL.Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RL.OwnData.Contract\RL.OwnData.Contract.csproj">
-      <Project>{a2bbca6f-3513-495d-9f7e-a5048cd074d9}</Project>
-      <Name>RL.OwnData.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RL.RemoteData.Contract\RL.RemoteData.Contract.csproj">
-      <Project>{9bbd3a3e-6bb3-4b5a-943d-a1667a59d664}</Project>
-      <Name>RL.RemoteData.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

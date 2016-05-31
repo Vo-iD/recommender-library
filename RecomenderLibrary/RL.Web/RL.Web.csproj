@@ -258,6 +258,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RL.Business.Configuration\RL.Business.Configuration.csproj">
+      <Project>{B5651A00-4850-492B-B674-619B9D6DA5D3}</Project>
+      <Name>RL.Business.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RL.Business.Contract\RL.Business.Contract.csproj">
       <Project>{a290658f-1517-470e-ba05-d27d79c64946}</Project>
       <Name>RL.Business.Contract</Name>

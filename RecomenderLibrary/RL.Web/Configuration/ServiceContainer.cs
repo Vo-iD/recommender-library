@@ -1,6 +1,5 @@
 ﻿using Ninject;
-using RL.OwnData.Contract.Infrastructure;
-using RL.OwnData.Implementation.Infrastructure;
+using RL.Business.Configuration.DependencyInjection;
 
 namespace RL.Web.Configuration
 {
@@ -8,8 +7,7 @@ namespace RL.Web.Configuration
     {
         public static void RegisterServices(IKernel kernel)
         {
-            // Repositories
-            kernel.Bind<IDatabaseUnitOfWork>().To<DatabaseUnitOfWork>();
+            BusinessConfiguration.RegisterBusinessServices(kernel);
         }
     }
 }

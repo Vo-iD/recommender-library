@@ -1,7 +1,9 @@
-﻿using Google.Apis.Books.v1;
-using Google.Apis.Books.v1.Data;
+﻿using System.Collections.Generic;
+using AutoMapper;
+using Google.Apis.Books.v1;
 using Google.Apis.Services;
 using RL.RemoteData.Contract.Infrastructure;
+using RL.RemoteData.Contract.RemoteModels;
 
 namespace RL.RemoteData.Implementation.Infrastructure
 {
@@ -9,16 +11,21 @@ namespace RL.RemoteData.Implementation.Infrastructure
     {
         private BooksService _service;
 
-        public Volume GetBook(string id)
+        public GoogleRepository()
         {
             InitService();
-            return _service.Volumes.Get(id).Execute();
         }
 
-        public Volumes GetBooks(string term, bool conditionOr, bool all = true)
+        public BookDto GetBook(string id)
+        {
+            var volume = _service.Volumes.Get(id).Execute();
+            return Mapper.Map<BookDto>(volume);
+        }
+
+        public IEnumerable<BookDto> GetBooks(string term, bool all = true)
         {
             var volumes = _service.Volumes.List(term).Execute();
-            return volumes;
+            return Mapper.Map<IEnumerable<BookDto>>(volumes.Items);
         }
 
         private void InitService()

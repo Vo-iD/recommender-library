@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using RL.Entity.Own;
 using RL.OwnData.Contract.Infrastructure;
 
@@ -17,9 +18,9 @@ namespace RL.OwnData.Implementation.Infrastructure
             Entities = context.Set<TDataType>();
         }
 
-        public IQueryable<TDataType> Get()
+        public IQueryable<TDataType> Get(Expression<Func<TDataType, bool>> query)
         {
-            return Entities;
+            return Entities.Where(query);
         }
 
         public TDataType Get(int id)

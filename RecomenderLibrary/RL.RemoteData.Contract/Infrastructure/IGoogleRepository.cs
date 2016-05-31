@@ -1,10 +1,11 @@
-﻿using Google.Apis.Books.v1.Data;
+﻿using System.Collections.Generic;
+using RL.RemoteData.Contract.RemoteModels;
 
 namespace RL.RemoteData.Contract.Infrastructure
 {
     public interface IGoogleRepository
     {
-        Volume GetBook(string id);
-        Volumes GetBooks(string term, bool conditionOr, bool all = true);
+        BookDto GetBook(string id);
+        IEnumerable<BookDto> GetBooks(string term, bool all = true);
     }
 }
