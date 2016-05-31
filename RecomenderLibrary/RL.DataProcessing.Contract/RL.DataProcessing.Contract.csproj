@@ -47,8 +47,6 @@
   <ItemGroup>
     <Compile Include="Configuration\DataProcessingConfiguration.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
-    <Compile Include="Models\BookDto.cs" />
-    <Compile Include="Models\ImageLinksDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
@@ -61,8 +59,13 @@
       <Project>{9cfe0e86-fdb6-4a3c-9d42-87e5927078e2}</Project>
       <Name>RL.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RL.RemoteData.Contract\RL.RemoteData.Contract.csproj">
+      <Project>{9BBD3A3E-6BB3-4B5A-943D-A1667A59D664}</Project>
+      <Name>RL.RemoteData.Contract</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
