@@ -49,6 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RL.Entity\RL.Entity.csproj">
+      <Project>{9cfe0e86-fdb6-4a3c-9d42-87e5927078e2}</Project>
+      <Name>RL.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RL.OwnData.Contract\RL.OwnData.Contract.csproj">
       <Project>{a2bbca6f-3513-495d-9f7e-a5048cd074d9}</Project>
       <Name>RL.OwnData.Contract</Name>
