@@ -6,6 +6,6 @@ namespace RL.RemoteData.Contract.Infrastructure
     public interface IGoogleRepository
     {
         BookDto GetBook(string id);
-        IEnumerable<BookDto> GetBooks(string term, bool all = true);
+        IEnumerable<BookDto> GetBooks(string term, long maxResults = 10);
     }
 }

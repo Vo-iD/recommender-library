@@ -13,10 +13,15 @@ namespace RL.Web.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(string term)
         {
-            var term = RandomString(1);
-            var books = _unitOfWork.FindBooks(term);
+            if(string.IsNullOrEmpty(term))
+            {
+                term = RandomString(1);
+            }
+
+            var books = _unitOfWork.FindBooks(term, 40);
             return View(books);
         }
 
@@ -34,21 +39,9 @@ namespace RL.Web.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Search(string term)
-        {
-            if (string.IsNullOrEmpty(term))
-            {
-                return RedirectToAction("Index");
-            }
-
-            var books = _unitOfWork.FindBooks(term);
-            return View(books);
-        }
-
         private static string RandomString(int length)
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var random = new Random();
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());

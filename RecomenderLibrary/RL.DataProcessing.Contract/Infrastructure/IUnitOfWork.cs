@@ -9,7 +9,7 @@ namespace RL.DataProcessing.Contract.Infrastructure
     public interface IUnitOfWork
     {
         BookDto GetBook(string id);
-        IEnumerable<BookDto> FindBooks(string term);
+        IEnumerable<BookDto> FindBooks(string term, long count = 10);
         void Insert<TData>(TData entity) where TData : OwnEntityAggregation;
         void Update<TData>(TData entity) where TData : OwnEntityAggregation;
         void UpdateUser(User user);

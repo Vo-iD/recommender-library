@@ -30,7 +30,7 @@
                 </ul>
             }
 
-            @using (Html.BeginForm("Search", "Home", FormMethod.Get, new {@class = "navbar-form navbar-left", role = "search"}))
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new {@class = "navbar-form navbar-left", role = "search"}))
             {
                 <div class="form-group">
                     <input type="text" class="form-control" name="term" placeholder="Search">

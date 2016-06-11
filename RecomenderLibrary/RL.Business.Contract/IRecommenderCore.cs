@@ -9,6 +9,6 @@ namespace RL.Business.Contract
 {
     public interface IRecommenderCore
     {
-        IEnumerable<BookDto> GetRecommendations(string userId);
+        IEnumerable<BookDto> GetRecommendations(string userId, int count = 10);
     }
 }

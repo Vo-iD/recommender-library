@@ -26,9 +26,9 @@ namespace RL.DataProcessing.Implementation.Infrastructure
             return book;
         }
 
-        public IEnumerable<BookDto> FindBooks(string term)
+        public IEnumerable<BookDto> FindBooks(string term, long count = 10)
         {
-            var searchResult = _googleRepository.GetBooks(term);
+            var searchResult = _googleRepository.GetBooks(term, count);
 
             return searchResult;
         }

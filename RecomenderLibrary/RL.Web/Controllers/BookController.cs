@@ -37,7 +37,16 @@ namespace RL.Web.Controllers
             var book = Mapper.Map<FavoriteBook>(model);
             var user = CurrentUser;
             book.User = user;
-            user.Books.Add(book);
+            var bookFromDb = user.Books.FirstOrDefault(x => x.BookId == model.BookId);
+            if (bookFromDb != null)
+            {
+                bookFromDb.Mark = model.Mark;
+            }
+            else
+            {
+                user.Books.Add(book);
+            }
+
             UnitOfWork.UpdateUser(user);
         }
 

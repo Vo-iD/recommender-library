@@ -51,29 +51,29 @@
         <div class="panel-heading">
             <h3>
                 @book.Title
-                @if (!string.IsNullOrEmpty(book.SubTitle))
-                {
-                    <span>
-                        : @book.SubTitle
-                    </span>
-                }
+                    @if (!string.IsNullOrEmpty(book.SubTitle))
+                    {
+                        <span>
+                            : @book.SubTitle
+                        </span>
+                    }
             </h3>
         </div>
         <div class="panel-body">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#bookOverview_@book.Id" data-toggle="tab">Book overview</a></li>
                 <li><a href="#bookInfo_@book.Id" data-toggle="tab">Book info</a></li>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Actions <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#bookInfo_@book.Id" onclick="addFavorites(this.id, this.title)" id="@book.Id" title="@book.Title">Add to my favorites</a></li>
-                        </ul>
-                    </li>
-                }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Actions <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#bookInfo_@book.Id" onclick="addFavorites(this.id, this.title)" id="@book.Id" title="@book.Title">Add to my favorites</a></li>
+                            </ul>
+                        </li>
+                    }
             </ul>
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade active in" id="bookOverview_@book.Id">

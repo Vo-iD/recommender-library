@@ -22,9 +22,17 @@ namespace RL.RemoteData.Implementation.Infrastructure
             return Mapper.Map<BookDto>(volume);
         }
 
-        public IEnumerable<BookDto> GetBooks(string term, bool all = true)
+        public IEnumerable<BookDto> GetBooks(string term, long maxResults = 10)
         {
-            var volumes = _service.Volumes.List(term).Execute();
+            var request = _service.Volumes.List(term);
+            request.LangRestrict = "en";
+            if (maxResults > 40)
+            {
+                maxResults = 40;
+            }
+
+            request.MaxResults = maxResults;
+            var volumes = request.Execute();
             return Mapper.Map<IEnumerable<BookDto>>(volumes.Items);
         }
 
