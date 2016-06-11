@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecommenderCore.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RL.Business.Contract\RL.Business.Contract.csproj">
@@ -51,6 +52,10 @@
     <ProjectReference Include="..\RL.DataProcessing.Contract\RL.DataProcessing.Contract.csproj">
       <Project>{e8dd7aba-d194-452d-ab02-a92b11b3654d}</Project>
       <Name>RL.DataProcessing.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.RemoteData.Contract\RL.RemoteData.Contract.csproj">
+      <Project>{9BBD3A3E-6BB3-4B5A-943D-A1667A59D664}</Project>
+      <Name>RL.RemoteData.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

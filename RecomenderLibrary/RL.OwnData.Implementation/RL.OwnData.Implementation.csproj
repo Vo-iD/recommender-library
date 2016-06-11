@@ -61,13 +61,14 @@
     <Compile Include="Infrastructure\HardRemoveRepository.cs" />
     <Compile Include="Infrastructure\SafeRemoveRepository.cs" />
     <Compile Include="Infrastructure\DatabaseUnitOfWork.cs" />
-    <Compile Include="Migrations\201606111352183_Init.cs" />
-    <Compile Include="Migrations\201606111352183_Init.Designer.cs">
-      <DependentUpon>201606111352183_Init.cs</DependentUpon>
+    <Compile Include="Infrastructure\UserRepository.cs" />
+    <Compile Include="Migrations\201606111601596_first.cs" />
+    <Compile Include="Migrations\201606111601596_first.Designer.cs">
+      <DependentUpon>201606111601596_first.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606111354546_Removed unnecessary data from UserTable.cs" />
-    <Compile Include="Migrations\201606111354546_Removed unnecessary data from UserTable.Designer.cs">
-      <DependentUpon>201606111354546_Removed unnecessary data from UserTable.cs</DependentUpon>
+    <Compile Include="Migrations\201606111622341_Changed enumerable to collection.cs" />
+    <Compile Include="Migrations\201606111622341_Changed enumerable to collection.Designer.cs">
+      <DependentUpon>201606111622341_Changed enumerable to collection.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,11 +88,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606111352183_Init.resx">
-      <DependentUpon>201606111352183_Init.cs</DependentUpon>
+    <Content Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.3.js" />
+    <Content Include="Scripts\jquery-1.6.3.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606111601596_first.resx">
+      <DependentUpon>201606111601596_first.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606111354546_Removed unnecessary data from UserTable.resx">
-      <DependentUpon>201606111354546_Removed unnecessary data from UserTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606111622341_Changed enumerable to collection.resx">
+      <DependentUpon>201606111622341_Changed enumerable to collection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

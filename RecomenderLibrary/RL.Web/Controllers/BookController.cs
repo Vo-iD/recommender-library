@@ -1,42 +1,72 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using AutoMapper;
 using RL.DataProcessing.Contract.Infrastructure;
-using RL.OwnData.Contract.Infrastructure;
+using RL.Entity.Own;
 using RL.RemoteData.Contract.RemoteModels;
+using RL.Web.Models;
+using WebGrease.Css.Extensions;
 
 namespace RL.Web.Controllers
 {
-    public class BookController : Controller
+    public class BookController : BaseController
     {
-        private readonly IUnitOfWork _unitOfWork;
-
-        public BookController(IUnitOfWork unitOfWork)
+        public BookController(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            _unitOfWork = unitOfWork;
         }
 
-        // GET: Book
         [HttpGet]
         public ActionResult GetMyFavoriteBooks()
         {
-            var books = GetBookList();
+            var user = CurrentUser;
+            var books = new List<BookDto>();
+            user.Books.ForEach(b =>
+            {
+                var book = UnitOfWork.GetBook(b.BookId);
+                book.Mark = b.Mark;
+                books.Add(book);
+            });
+
             return View(books);
         }
 
-        private IEnumerable<BookDto> GetBookList()
+        [HttpPost]
+        public void AddToMyFavorites(FavoriteBookModel model)
         {
-            var books = new List<BookDto>();
-            var ids = new List<string>
+            var book = Mapper.Map<FavoriteBook>(model);
+            var user = CurrentUser;
+            book.User = user;
+            user.Books.Add(book);
+            UnitOfWork.UpdateUser(user);
+        }
+
+        [HttpPost]
+        public void RemoveFromMyFavorite(string bookId)
+        {
+            var user = CurrentUser;
+            var book = user.Books.FirstOrDefault(x => x.BookId == bookId);
+            user.Books.Remove(book);
+            UnitOfWork.UpdateUser(user);
+        }
+
+        [HttpPost]
+        public void UpdateMyFavorite(FavoriteBookModel model)
+        {
+            var user = CurrentUser;
+            var favoriteBook = user.Books.FirstOrDefault(x => x.BookId == model.BookId);
+            if (favoriteBook != null)
             {
-                "yxv1LK5gyV4C",
-                "y3CyRurE7P4C",
-                "qUI8pbpCNJUC",
-                "XvuoCwAAQBAJ"
-            };
+                favoriteBook.Mark = model.Mark;
+            }
+            else
+            {
+                var book = Mapper.Map<FavoriteBook>(model);
+                book.User = user;
+                user.Books.Add(book);
+            }
 
-            ids.ForEach(id => books.Add(_unitOfWork.GetBook(id)));
-
-            return books;
+            UnitOfWork.UpdateUser(user);
         }
     }
 }

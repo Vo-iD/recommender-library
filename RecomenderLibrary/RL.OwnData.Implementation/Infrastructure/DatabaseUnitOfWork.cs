@@ -12,6 +12,7 @@ namespace RL.OwnData.Implementation.Infrastructure
         private bool _disposed;
         private Dictionary<string, object> _safeRemoveRepositories;
         private Dictionary<string, object> _hardRemoveRepositories;
+        private UserRepository _userRepository;
 
         public DatabaseUnitOfWork(BookContext context)
         {
@@ -63,6 +64,11 @@ namespace RL.OwnData.Implementation.Infrastructure
             }
 
             return (ISafeRemoveRepository<TData>) _safeRemoveRepositories[type];
+        }
+
+        public IUserRepository UserRepository
+        {
+            get { return _userRepository ?? (_userRepository = new UserRepository(_context)); }
         }
 
         public IHardRemoveRepository<TData> HardRemoveRepository<TData>() where TData : OwnEntityAggregation

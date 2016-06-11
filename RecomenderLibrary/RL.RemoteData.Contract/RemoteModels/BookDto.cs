@@ -14,5 +14,6 @@ namespace RL.RemoteData.Contract.RemoteModels
         public IEnumerable<string> Categories { get; set; }
         public ImageLinksDto Image { get; set; }
         public DateTime PublishDate { get; set; }
+        public int? Mark { get; set; }
     }
 }

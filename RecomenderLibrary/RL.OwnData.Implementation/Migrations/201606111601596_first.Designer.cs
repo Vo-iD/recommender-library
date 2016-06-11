@@ -7,13 +7,13 @@ namespace RL.OwnData.Implementation.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class RemovedunnecessarydatafromUserTable : IMigrationMetadata
+    public sealed partial class first : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemovedunnecessarydatafromUserTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(first));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606111354546_Removed unnecessary data from UserTable"; }
+            get { return "201606111601596_first"; }
         }
         
         string IMigrationMetadata.Source

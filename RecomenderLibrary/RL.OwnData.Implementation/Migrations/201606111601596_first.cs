@@ -3,37 +3,22 @@ namespace RL.OwnData.Implementation.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class first : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Marks",
+                "dbo.FavoriteBooks",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Points = c.Int(nullable: false),
-                        Description = c.String(),
-                        IsRemoved = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Messages",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Body = c.String(),
-                        Date = c.DateTime(nullable: false),
-                        IsRemoved = c.Boolean(nullable: false),
-                        Receiver_Id = c.String(maxLength: 128),
-                        Sender_Id = c.String(maxLength: 128),
+                        BookId = c.String(),
+                        Mark = c.Int(nullable: false),
+                        User_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.Receiver_Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.Sender_Id)
-                .Index(t => t.Receiver_Id)
-                .Index(t => t.Sender_Id);
+                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
+                .Index(t => t.User_Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -42,8 +27,6 @@ namespace RL.OwnData.Implementation.Migrations
                         Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(),
                         Description = c.String(),
-                        RegisterDate = c.DateTime(nullable: false),
-                        LastLoginDate = c.DateTime(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -96,6 +79,34 @@ namespace RL.OwnData.Implementation.Migrations
                 .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
+            
+            CreateTable(
+                "dbo.Marks",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Points = c.Int(nullable: false),
+                        Description = c.String(),
+                        IsRemoved = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Messages",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Body = c.String(),
+                        Date = c.DateTime(nullable: false),
+                        IsRemoved = c.Boolean(nullable: false),
+                        Receiver_Id = c.String(maxLength: 128),
+                        Sender_Id = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AspNetUsers", t => t.Receiver_Id)
+                .ForeignKey("dbo.AspNetUsers", t => t.Sender_Id)
+                .Index(t => t.Receiver_Id)
+                .Index(t => t.Sender_Id);
             
             CreateTable(
                 "dbo.QuestionnaireAnswers",
@@ -171,6 +182,7 @@ namespace RL.OwnData.Implementation.Migrations
             DropForeignKey("dbo.QuestionnaireItems", "Questionnaire_Id", "dbo.Questionnaires");
             DropForeignKey("dbo.Messages", "Sender_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.Messages", "Receiver_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.FavoriteBooks", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
@@ -179,24 +191,26 @@ namespace RL.OwnData.Implementation.Migrations
             DropIndex("dbo.QuestionnaireHistories", new[] { "Questionnaire_Id" });
             DropIndex("dbo.QuestionnaireItems", new[] { "Questionnaire_Id" });
             DropIndex("dbo.QuestionnaireAnswers", new[] { "Question_Id" });
+            DropIndex("dbo.Messages", new[] { "Sender_Id" });
+            DropIndex("dbo.Messages", new[] { "Receiver_Id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Messages", new[] { "Sender_Id" });
-            DropIndex("dbo.Messages", new[] { "Receiver_Id" });
+            DropIndex("dbo.FavoriteBooks", new[] { "User_Id" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.QuestionnaireHistories");
             DropTable("dbo.Questionnaires");
             DropTable("dbo.QuestionnaireItems");
             DropTable("dbo.QuestionnaireAnswers");
+            DropTable("dbo.Messages");
+            DropTable("dbo.Marks");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.Messages");
-            DropTable("dbo.Marks");
+            DropTable("dbo.FavoriteBooks");
         }
     }
 }

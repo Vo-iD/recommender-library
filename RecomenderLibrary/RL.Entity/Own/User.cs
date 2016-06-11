@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -13,11 +12,13 @@ namespace RL.Entity.Own
 
         public string Description { get; set; }
 
-        public IEnumerable<Message> ReceivedMessages { get; set; }
+        public virtual ICollection<Message> ReceivedMessages { get; set; }
 
-        public IEnumerable<Message> SendedMessages { get; set; }
+        public virtual ICollection<Message> SendedMessages { get; set; }
 
-        public IEnumerable<QuestionnaireItem> Items { get; set; }
+        public virtual ICollection<QuestionnaireItem> Items { get; set; }
+
+        public virtual ICollection<FavoriteBook> Books { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

@@ -9,8 +9,8 @@ namespace RL.Entity.Own
 
         public string Notes { get; set; }
 
-        public IEnumerable<QuestionnaireItem> Items { get; set; }
+        public virtual ICollection<QuestionnaireItem> Items { get; set; }
 
-        public IEnumerable<QuestionnaireHistory> History { get; set; }
+        public virtual ICollection<QuestionnaireHistory> History { get; set; }
     }
 }

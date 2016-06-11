@@ -8,6 +8,6 @@ namespace RL.Entity.Own
 
         public string Question { get; set; }
 
-        public IEnumerable<QuestionnaireAnswer> Answers { get; set; }
+        public virtual ICollection<QuestionnaireAnswer> Answers { get; set; }
     }
 }

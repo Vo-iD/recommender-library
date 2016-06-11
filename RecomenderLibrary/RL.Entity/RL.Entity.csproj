@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Own\FavoriteBook.cs" />
     <Compile Include="Own\Following.cs" />
     <Compile Include="Own\Mark.cs" />
     <Compile Include="Own\Message.cs" />

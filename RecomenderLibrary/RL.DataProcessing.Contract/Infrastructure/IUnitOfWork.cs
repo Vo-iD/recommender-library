@@ -12,6 +12,8 @@ namespace RL.DataProcessing.Contract.Infrastructure
         IEnumerable<BookDto> FindBooks(string term);
         void Insert<TData>(TData entity) where TData : OwnEntityAggregation;
         void Update<TData>(TData entity) where TData : OwnEntityAggregation;
+        void UpdateUser(User user);
+        User GetUser(string id);
         void SafeRemove<TData>(TData entity) where TData : SafeRemoveAggregation;
         void HardRemove<TData>(TData entity) where TData : OwnEntityAggregation;
         TData Get<TData>(int id) where TData : OwnEntityAggregation;

@@ -9,6 +9,7 @@ namespace RL.OwnData.Implementation
         public BookContext()
             : base("name=BooksConnection")
         {
+            this.Configuration.LazyLoadingEnabled = true; 
         }
 
         public override IDbSet<User> Users { get; set; }
@@ -18,5 +19,6 @@ namespace RL.OwnData.Implementation
         public DbSet<QuestionnaireAnswer> QuestionnaireAnswers { get; set; }
         public DbSet<QuestionnaireHistory> QuestionnaireHistories { get; set; }
         public DbSet<QuestionnaireItem> QuestionnaireItems { get; set; }
+        public DbSet<FavoriteBook> FavoriteBooks { get; set; }
     }
 }

@@ -11,5 +11,7 @@ namespace RL.OwnData.Contract.Infrastructure
         IHardRemoveRepository<TData> HardRemoveRepository<TData>() where TData : OwnEntityAggregation;
 
         ISafeRemoveRepository<TData> SafeRemoveRepository<TData>() where TData : SafeRemoveAggregation;
+
+        IUserRepository UserRepository { get; }
     }
 }

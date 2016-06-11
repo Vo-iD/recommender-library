@@ -39,6 +39,17 @@ namespace RL.DataProcessing.Implementation.Infrastructure
             databaseUnitOfWork.Update(entity);
         }
 
+        public void UpdateUser(User user)
+        {
+            _databaseUnitOfWork.UserRepository.Update(user);
+            _databaseUnitOfWork.UserRepository.Save();
+        }
+
+        public User GetUser(string id)
+        {
+            return _databaseUnitOfWork.UserRepository.GetUser(id);
+        }
+
         public void SafeRemove<TData>(TData entity) where TData : SafeRemoveAggregation
         {
             _databaseUnitOfWork.SafeRemoveRepository<TData>().Delete(entity.Id);

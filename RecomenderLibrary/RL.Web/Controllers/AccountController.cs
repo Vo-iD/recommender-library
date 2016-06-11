@@ -2,37 +2,23 @@
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using RL.DataProcessing.Contract.Infrastructure;
 using RL.Entity.Own;
-using RL.OwnData.Contract.Infrastructure;
 using RL.Web.Models;
 
 namespace RL.Web.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
-        private ApplicationUserManager _userManager;
-
-        public AccountController()
+        public AccountController(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
 
-        public AccountController(ApplicationUserManager userManager)
+        public AccountController(ApplicationUserManager userManager, IUnitOfWork unitOfWork) : this(unitOfWork)
         {
             UserManager = userManager;
-        }
-
-        public ApplicationUserManager UserManager {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
         }
 
         //

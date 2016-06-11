@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - Social bookwork</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="/Content/jquery.m.toast.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -22,10 +22,13 @@
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("My favorite books", "GetMyFavoriteBooks", "Book")</li>
-                <li>@Html.ActionLink("Give me some recommendations", "GetMyRecommendations", "Recommendation")</li>
-            </ul>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("My favorite books", "GetMyFavoriteBooks", "Book")</li>
+                    <li>@Html.ActionLink("Give me some recommendations", "GetMyRecommendations", "Recommendation")</li>
+                </ul>
+            }
 
             @using (Html.BeginForm("Search", "Home", FormMethod.Get, new {@class = "navbar-form navbar-left", role = "search"}))
             {
@@ -50,6 +53,7 @@
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/notifications")
 @RenderSection("scripts", required: false)
 </body>
 </html>
