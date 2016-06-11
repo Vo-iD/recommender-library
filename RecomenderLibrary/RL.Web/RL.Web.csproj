@@ -186,7 +186,9 @@
     <Compile Include="Configuration\NinjectScope.cs" />
     <Compile Include="Configuration\ServiceContainer.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RecommendationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,6 +260,9 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Book\GetMyFavoriteBooks.cshtml" />
+    <Content Include="Views\Recommendation\GetMyRecommendations.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,6 +295,10 @@
       <Project>{5eaf46a4-e814-40b9-bbd3-be28f5eb0134}</Project>
       <Name>RL.DataConfiguration</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RL.DataProcessing.Contract\RL.DataProcessing.Contract.csproj">
+      <Project>{E8DD7ABA-D194-452D-AB02-A92B11B3654D}</Project>
+      <Name>RL.DataProcessing.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RL.Entity\RL.Entity.csproj">
       <Project>{9CFE0E86-FDB6-4A3C-9D42-87E5927078E2}</Project>
       <Name>RL.Entity</Name>
@@ -301,6 +310,10 @@
     <ProjectReference Include="..\RL.OwnData.Implementation\RL.OwnData.Implementation.csproj">
       <Project>{B7C24984-B233-4341-8056-542361758BED}</Project>
       <Name>RL.OwnData.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL.RemoteData.Contract\RL.RemoteData.Contract.csproj">
+      <Project>{9BBD3A3E-6BB3-4B5A-943D-A1667A59D664}</Project>
+      <Name>RL.RemoteData.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\RL.RemoteData.Implementation\RL.RemoteData.Implementation.csproj">
       <Project>{82d6f7cc-9008-47b3-bf2a-c338ca770910}</Project>

@@ -5,13 +5,13 @@ using RL.RemoteData.Contract.RemoteModels;
 
 namespace RL.RemoteData.Contract.Configuration
 {
-    public class AutoMapperConfig : Profile
+    public class AutoMapperConfig
     {
-        protected override void Configure()
+        public static void Configure()
         {
-            CreateMap<Volume.VolumeInfoData.ImageLinksData, ImageLinksDto>();
+            Mapper.CreateMap<Volume.VolumeInfoData.ImageLinksData, ImageLinksDto>();
 
-            CreateMap<Volume, BookDto>()
+            Mapper.CreateMap<Volume, BookDto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Authors, opt => opt.MapFrom(src => src.VolumeInfo.Authors))
                 .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.VolumeInfo.Categories))
@@ -21,7 +21,7 @@ namespace RL.RemoteData.Contract.Configuration
                 .ForMember(dest => dest.SubTitle, opt => opt.MapFrom(src => src.VolumeInfo.Subtitle))
                 .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.VolumeInfo.Title))
                 .ForMember(dest => dest.PublishDate,
-                    opt => opt.MapFrom(src => DateTime.Parse(src.VolumeInfo.PublishedDate)));
+                    opt => opt.MapFrom(src => DateTime.UtcNow)); //DateTime.Parse(src.VolumeInfo.PublishedDate)));
         }
     }
 }

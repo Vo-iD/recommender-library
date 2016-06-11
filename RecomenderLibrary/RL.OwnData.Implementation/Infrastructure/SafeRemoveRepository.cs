@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
+using RL.Entity;
 using RL.Entity.Own;
 using RL.OwnData.Contract.Infrastructure;
 

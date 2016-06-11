@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<RL.RemoteData.Contract.RemoteModels.BookDto>
 @{
-    ViewBag.Title = "Home page";
+    ViewBag.Title = "Favorite";
 }
 
-<h2>Some random books</h2>
+<h2>Below you can find your favorite books...</h2>
 
 @foreach (var book in @Model)
 {
@@ -24,15 +24,15 @@
                 <li class="active"><a href="#bookOverview_@book.Id" data-toggle="tab">Book overview</a></li>
                 <li><a href="#bookInfo_@book.Id" data-toggle="tab">Book info</a></li>
                 @*<li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Dropdown <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
-                        </ul>
-                    </li>*@
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Dropdown <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
+                    </ul>
+                </li>*@
             </ul>
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade active in" id="bookOverview_@book.Id">

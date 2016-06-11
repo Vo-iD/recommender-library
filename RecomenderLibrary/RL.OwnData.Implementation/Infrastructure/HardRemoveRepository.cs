@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using RL.Entity;
 using RL.Entity.Own;
 using RL.OwnData.Contract.Infrastructure;
 

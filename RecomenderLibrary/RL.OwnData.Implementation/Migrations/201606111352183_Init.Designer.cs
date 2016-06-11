@@ -7,13 +7,13 @@ namespace RL.OwnData.Implementation.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605230605258_InitialCreate"; }
+            get { return "201606111352183_Init"; }
         }
         
         string IMigrationMetadata.Source

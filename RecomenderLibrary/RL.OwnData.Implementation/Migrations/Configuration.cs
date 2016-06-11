@@ -5,15 +5,14 @@ namespace RL.OwnData.Implementation.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<RL.OwnData.Implementation.Infrastructure.BookContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<RL.OwnData.Implementation.BookContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "RL.OwnData.Implementation.Infrastructure.BookContext";
         }
 
-        protected override void Seed(RL.OwnData.Implementation.Infrastructure.BookContext context)
+        protected override void Seed(RL.OwnData.Implementation.BookContext context)
         {
             //  This method will be called after migrating to the latest version.
 

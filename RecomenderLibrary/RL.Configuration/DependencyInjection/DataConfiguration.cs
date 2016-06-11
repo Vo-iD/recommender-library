@@ -1,6 +1,7 @@
 ﻿using Ninject;
 using RL.OwnData.Contract.Infrastructure;
 using RL.OwnData.Implementation.Infrastructure;
+using RL.RemoteData.Contract.Configuration;
 using RL.RemoteData.Contract.Infrastructure;
 using RL.RemoteData.Implementation.Infrastructure;
 
@@ -13,6 +14,7 @@ namespace RL.Configuration.DependencyInjection
             // Repositories
             kernel.Bind<IDatabaseUnitOfWork>().To<DatabaseUnitOfWork>();
             kernel.Bind<IGoogleRepository>().To<GoogleRepository>();
+            AutoMapperConfig.Configure();
         }
     }
 }
